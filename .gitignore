@@ -1,0 +1,14 @@
+# Flutter
+Frontend/build/
+Frontend/.dart_tool/
+Frontend/.idea/
+Frontend/.metadata
+
+# Node / Java / Spring
+Backend/target/
+Backend/node_modules/
+Backend/.env
+
+# OS
+.DS_Store
+Thumbs.db
