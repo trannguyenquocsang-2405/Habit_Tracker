@@ -8,16 +8,19 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Trang chủ')),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Handle logout logic
-            context.read<AuthProvider>().logout();
-          },
-          child: const Text('Đăng xuất'),
-        ),
+      appBar: AppBar(
+        title: const Text('Trang chủ'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () {
+              // Handle logout logic
+              context.read<AuthProvider>().logout();
+            },
+          ),
+        ],
       ),
+      body: Center(child: const Text('Chào mừng bạn đến với Habit Tracker!')),
     );
   }
 }

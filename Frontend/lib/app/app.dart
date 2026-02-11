@@ -16,7 +16,13 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'Habit Tracker',
             theme: ThemeData(primarySwatch: Colors.blue),
-            home: auth.isLoggedIn ? HomeScreen() : LoginScreen(),
+            home: auth.isLoading
+                ? const Scaffold(
+                    body: Center(child: CircularProgressIndicator()),
+                  )
+                : auth.isLoggedIn
+                ? HomeScreen()
+                : LoginScreen(),
           );
         },
       ),
